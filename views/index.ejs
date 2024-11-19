@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="/styles/style.css">
+  <title>Custom Banner Slider</title>
+</head>
+<body>
+
+  <!-- navbar -->
+  <div id="wrapper">
+    <div id="header">
+        <!-- <a href="index.php"><img src="images/icon1.jpg" width="13" height="19" ></a>
+            <a href="index.php?link=aboutus"><img src="assets/icon2.jpg" width="12" height="19" style="margin: 0 15px;"></a>
+              <a href="index.php?link=contact"><img src="assets/icon3.jpg" width="13" height="19" ></a><br>
+        MONDAY. NOVEMBER 18. 2024 -->
+      </div>
+        <div id="logo">
+    </div>
+          <nav class="flex items-center">
+            <% navItems.forEach(function(item) { %>
+              <a href="<%= item.href %>" class="nav_text text-sm font-medium text-center w-full text-white hover:bg-blue-400 hover:text-black"><%= item.name %></a>
+            <% }) %>
+          </nav>
+  </div>
+
+  <!-- banner -->
+  <div class="swiper-container container mx-auto">
+    <div class="swiper-wrapper">
+      <% images.forEach(function(image) { %>
+        <div class="swiper-slide">
+          <img src="<%= image.img %>" alt="Image">
+        </div>
+      <% }) %>
+    </div>
+    <div class="swiper-pagination pagination-containe">
+      <div class="pagination-dots flex space-x-2"></div>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+
+
+  <!-- main container -->
+  <main class="container mx-auto mt-5 pb-2">
+    <div class="flex justify-between">
+      <div class="container1 w-full">
+        <h2 class="text-xl font-bold mb-3 title_home">Secure Info-Tech Solutions (SITS)</h2>
+        <p class="text-black mb-4">
+          <b>Secure Info-Tech Solutions (SITS)</b> is an IT services firm that specializes in Consulting services, Training, Software
+          Development, Software Quality Assurance and Application Supports to the Information Technology (IT) Industry. Our
+          technical expertise lies in the implementation of strategic QA strategies and the latest QA testing tools.
+        </p>
+        <p class="text-black">
+          Our consulting and projects divisions allow for on-site, off-site development and supports. We provide clients end-to-end
+          business solutions. We focus on continually improving and excelling at our services to be the best in the industry while
+          Finding Solutions to complex business problems.
+        </p>
+        <a href="/about-us" class="text-yellow-700 underline ">Read More</a>
+      </div>
+      <div class="container2">
+        <h2 class="text-2xl font-bold mb-4 title_home">News & Events</h2>
+        <marquee class="bg-white" scrollamount="3" direction="up" loop="true" width="100%" height="100px;">
+          <b>Deploy Customize SharePoint Solutions</b><br>
+          <br>
+          <b>I-Phone Apps</b><br>
+          <br>
+          <b>Health Care IT Service</b><br>
+          <br>
+          <b>Data Modeling Development</b><br>
+                        <br>
+          <b>Deploy IT infrastructure solutions</b><br>
+                        <br>
+          <b>Data Centre Security</b>
+        </marquee>
+      </div>
+    </div>
+  </main>
+
+
+  <div class="grid grid-cols-3 gap-8 mt-3">
+    <!-- Services Section -->
+    <div class="w-[300px] h-[201px] mt-0 bg-no-repeat bg-cover" style="background-image: url('/assets/box.jpg');">
+      <div class="card-header text-[17px] pt-2 pl-5" >
+        <h2 class="card-title text-base leading-none mb-4" style="color: #102d6e ;">Services</h2>
+      </div>
+      <div class="card-content pt-4 pl-10">
+        <ul class="">
+          <% data.services.forEach(function(service) { %>
+            <li class="flex items-center space-x-2" style="color: #102d6e ;">
+              <span class="h-2 w-2" style="background-image: url('/assets/bullet.jpg');"></span>
+              <a href="#" class="text-xs hover:text-blue-500"><%= service %></a>
+            </li>
+          <% }) %>
+        </ul>
+        <br>
+        <div class="flex items-center justify-end pb-1" style="color: #102d6e ;">
+          <span class="h-3 w-4" style="background-image: url('/assets/more.jpg');"></span>
+          <a href="/services" class="text-xs hover:underline block pr-1">More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Solutions Section -->
+     <div class="w-[300px] h-[201px] mt-0 bg-no-repeat bg-cover" style="background-image: url('/assets/box.jpg');">
+      <div class="card-header text-[17px] pt-2 pl-5" >
+        <h2 class="card-title text-base leading-none mb-4" style="color: #102d6e ;">Solutions</h2>
+      </div>
+      <div class="card-content pt-4 pl-10">
+        <ul class="">
+          <% data.services.forEach(function(solution) { %>
+            <li class="flex items-center space-x-2" style="color: #102d6e ;">
+              <span class="h-2 w-2" style="background-image: url('/assets/bullet.jpg');"></span>
+              <a href="#" class="text-xs hover:text-blue-500"><%= solution %></a>
+            </li>
+          <% }) %>
+        </ul>
+        <br>
+        <div class="flex items-center justify-end pb-1" style="color: #102d6e ;">
+          <span class="h-3 w-4" style="background-image: url('/assets/more.jpg');"></span>
+          <a href="/services" class="text-xs hover:underline block pr-1">More</a>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Training Section -->
+     <div class="w-[300px] h-[201px] mt-0 bg-no-repeat bg-cover" style="background-image: url('/assets/box.jpg');">
+      <div class="card-header text-[17px] pt-2 pl-5" >
+        <h2 class="card-title text-base leading-none mb-4" style="color: #102d6e ;">Training</h2>
+      </div>
+      <div class="card-content pt-4 pl-10">
+        <ul class="">
+          <% data.services.forEach(function(training) { %>
+            <li class="flex items-center space-x-2" style="color: #102d6e ;">
+              <span class="h-2 w-2" style="background-image: url('/assets/bullet.jpg');"></span>
+              <a href="#" class="text-xs hover:text-blue-500"><%= training %></a>
+            </li>
+          <% }) %>
+        </ul>
+        <br>
+        <div class="flex items-center justify-end pb-1" style="color: #102d6e ;">
+          <span class="h-3 w-4" style="background-image: url('/assets/more.jpg');"></span>
+          <a href="/services" class="text-xs hover:underline block pr-1">More</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  
+<!-- Footer -->
+<footer class="text-center mt-8">
+  <p class="text-white py-1" style="background-color:#102d6e;">Secure Info-Tech Solutions © 2008-2012 All rights carefully reserved and preserved.</p>
+</footer>
+  
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+  <script src="/scripts/slider.js"></script>
+</body>
+</html>
