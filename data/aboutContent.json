@@ -1,0 +1,32 @@
+{
+  "mainTitle": "ABOUT US",
+  "sections": [
+    {
+      "title": "Secure Info-Tech Solutions (SITS)",
+      "paragraphs": [
+        "is an IT services firm that specializes in Consulting services, Training, Software Development, Software Quality Assurance and Application Supports to the Information Technology (IT) Industry. Our technical expertise lies in the implementation of streamlined QA strategies and the latest QA testing tools."
+      ]
+    },
+    {
+      "paragraphs": [
+        "Our consulting and projects divisions allow for on-site, off-site development and supports. We provide clients end-to-end business solutions. We focus on continually improving and excelling at our services to be the best in the industry while Finding Solutions to complex Business problems."
+      ]
+    },
+    {
+      "paragraphs": [
+        "Secure Info-Tech Solutions provides clients with customized services including test automation, functional testing, performance testing, and defect management and application support. Secure Info-Tech Solutions also provides training and mentoring services that allow IT organizations to rapidly implement software testing tools. At Secure Info-Tech Solutions, our mission is to provide the expertise that will allow IT organizations to deploy, upgrade and manage critical software systems."
+      ]
+    },
+    {
+      "paragraphs": [
+        "We provide staff with the skills and experience that any organization can depend on. Secure Info-Tech Solutions employees offer more than just excellent working knowledge of their jobs. They also demonstrate the right attitude in addition to being versatile and flexible, our employees can quickly apply their education and experience to the specific responsibility at work place."
+      ]
+    }
+  ],
+  "image": {
+    "src": "/assets/about2.jpg",
+    "alt": "Professional working on computer",
+    "width": 800,
+    "height": 600
+  }
+}

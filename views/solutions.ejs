@@ -6,7 +6,7 @@
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
   <link rel="stylesheet" href="/styles/style.css">
-  <title>Mabridge - About Us</title>
+  <title>Mabridge - Solutions</title>
 </head>
 <body>
 
@@ -36,40 +36,41 @@
     </nav>
   </div>
 
-
-  <!-- single image display -->
-    <div class="">
-         <img src="/banner/about.png" alt="About Us Banner" class="w-full h-auto"> 
-    </div>
+  <!-- Hero Section -->
+  <div class="">
+    <img src="/banner/services.png" alt="Services background" class="w-full h-full">
+  </div>
 
   <!-- Main Content -->
-<main class="mt-2 mb-8">
-    <h1 class="text-xl font-bold mb-3 title_color"><%= aboutContent.mainTitle %></h1>
+  <main class="mt-2 mb-8">
+    <h1 class="text-xl font-bold mb-3 title_color"><%= solutionsContent.mainTitle %></h1>
     
     <div class="grid grid-cols-3 gap-4">
       <div class="col-span-2 space-y-6">
-        <% aboutContent.sections.forEach(function(section) { %>
-          <div>
-            <h2 class="font-semibold mb-3 inline"><%= section.title %></h2>
-            <% section.paragraphs.forEach(function(paragraph) { %>
-              <span class="text-gray-700"><%= paragraph %></span>
-            <% }) %>
+      <% solutionsContent.solutionCategories.forEach(function(category, index) { %>
+        <div>
+            <h2 class="font-semibold mb-3 inline"><%= category.title %></h2>
+            <% if (category.description) { %>
+              <span class="text-gray-600"><%= category.description %></span>
+            <% } %>
           </div>
-        <% }) %>
-      </div>
-  
-      <div class="relative col-span-1 h-[400px] md:h-auto">
-        <img
-          src="<%= aboutContent.image.src %>"
-          alt="<%= aboutContent.image.alt %>"
-          class="rounded-lg shadow-lg object-cover w-full h-full"
-        />
-      </div>
+          <% if (category.items) { %>
+            <ul class="custom-list">
+              <% category.items.forEach(function(item) { %>
+                <li class="text-gray-700"><%= item %></li>
+              <% }) %>
+            </ul>
+          <% } %>
+        </div>
+      <% }) %>
+
+      <% if (solutionsContent.image) { %>
+        <img src="<%= solutionsContent.image.src %>" alt="<%= solutionsContent.image.alt %>" class="col-span-1 w-full h-60 float-right ml-4 mb-4">
+      <% } %>
     </div>
   </main>
-  
 
-  <footer class="text-center mt-8 ">
+  <footer class="text-center mt-8">
     <div id="mainbodybottom1"></div>
     <p class="text-white h-4" style="background-color:#102d6e;">Secure Mabridge © 2008-2012 All rights carefully reserved and preserved.</p>
 

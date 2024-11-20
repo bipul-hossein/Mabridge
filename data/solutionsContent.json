@@ -1,0 +1,27 @@
+{
+  "mainTitle": "SOLUTIONS",
+  "solutionCategories": [
+    {
+      "title": "Secure Info-Tech Solutions (SITS)",
+      "description": "committed to provide the best possible highest level of service to our clients and business partners to achieve the targeted goals in the following areas.",
+      "items": [
+        "System Development and Maintenance",
+        "Data Warehousing and Business Intelligence Solutions",
+        "Business Process Re-engineering",
+        "Software Quality Assurance and Testing",
+        "Business Analysis",
+        "Technology Consulting",
+        "Data Analysis",
+        "Change Management",
+        "Application Support Analyst",
+        "Network Builds, migrations and upgrades"
+      ]
+    }
+  ],
+  "image": {
+    "src": "/assets/about2.jpg",
+    "alt": "Professional working on computer",
+    "width": 800,
+    "height": 600
+  }
+}

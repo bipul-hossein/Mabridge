@@ -1,0 +1,20 @@
+{
+    "mainContainer": {
+      "title": "Secure Info-Tech Solutions (SITS)",
+      "paragraphs": [
+        "Secure Info-Tech Solutions (SITS) is an IT services firm that specializes in Consulting services, Training, Software Development, Software Quality Assurance and Application Supports to the Information Technology (IT) Industry. Our technical expertise lies in the implementation of strategic QA strategies and the latest QA testing tools.",
+        "Our consulting and projects divisions allow for on-site, off-site development and supports. We provide clients end-to-end business solutions. We focus on continually improving and excelling at our services to be the best in the industry while Finding Solutions to complex business problems."
+      ],
+      "readMoreLink": "/about-us",
+      "newsTitle": "News & Events",
+      "newsItems": [
+        "Deploy Customize SharePoint Solutions",
+        "I-Phone Apps",
+        "Health Care IT Service",
+        "Data Modeling Development",
+        "Deploy IT infrastructure solutions",
+        "Data Centre Security"
+      ]
+    }
+  }
+  

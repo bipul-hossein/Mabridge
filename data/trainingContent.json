@@ -1,0 +1,39 @@
+{
+  "mainTitle": "TRAINING",
+  "trainingCategories": [
+    {
+      "title": "Secure Info-Tech Solutions (SITS)",
+      "description": "Customized training on specific Software for the corporate needs.",
+      "type": "corporate"
+    },
+    {
+      "description": "Experienced Technical Professional-Advanced program where professional are taught specific Software Tools and New Technology needed for Career Advancement",
+      "type": "technical"
+    },
+    {
+      "description": "Experienced Non-Technical Professionals-13 to 14 weeks program where professionals are taught and trained in the following areas:",
+      "topics": [
+        "Structured Query Language (SQL) / UNIX / XML, HTML",
+        "Object Oriented Concepts: JAVA, RUBY, C++",
+        "Automation: Selenium Webdriver, TestNG, Selenium Grid, SOAP UI",
+        "Life Cycle Management Tool: HP ALM, SharePoint",
+        "Change Management Software: JIRA, SVN, VSS, Quality Center",
+        "Business Analysis (Requirement Gathering, Analysis)",
+        "Database: Oracle, SQL Server, Sybase and MS Access",
+        "Database Development Tool: SQL Plus, SQL Developer and TOAD",
+        "508 Compliance: JAWS, WAVE",
+        "Agile SCRUM",
+        "Software Development Life Cycle (SDLC) / Software Testing Life Cycle (STLC)",
+        "ETL Tool: Informatica Power Center",
+        "BI Tool: Business Object and OBIEE"
+      ],
+      "type": "non-technical"
+    }
+  ],
+  "image": {
+    "src": "/assets/about2.jpg",
+    "alt": "Professional working on computer",
+    "width": 800,
+    "height": 600
+  }
+}

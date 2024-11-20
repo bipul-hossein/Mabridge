@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="/styles/style.css">
+  <title>Mabridge - Services</title>
+</head>
+<body>
+
+  <!-- navbar -->
+  <div id="wrapper">
+    <div id="header">
+      <div class="flex flex-row">
+        <a href="/">
+          <img src="/assets/icon1.jpg" width="13" height="19">
+        </a>
+        <a href="/about-us">
+          <img src="/assets/icon2.jpg" width="12" height="19" style="margin: 0 15px;">
+        </a>
+        <a href="/contact">
+          <img src="/assets/icon3.jpg" width="13" height="19">
+        </a>
+      </div>
+      <%= formattedDate %>
+    </div>
+    <div id="logo">
+      <p class="text-2xl font-bold text-white text-center py-2">Mabridge</p>
+    </div>
+    <nav class="flex items-center">
+      <% navItems.forEach(function(item) { %>
+        <a href="<%= item.href %>" class="nav_text text-sm font-medium text-center w-full text-white hover:bg-blue-400 hover:text-black"><%= item.name %></a>
+      <% }) %>
+    </nav>
+  </div>
+
+  <!-- Hero Section -->
+  <div class="">
+    <img src="/banner/services.png" alt="Services background" class="w-full h-full ">
+  </div>
+
+  <!-- Main Content -->
+  <main class="mt-2 mb-8">
+    <h1 class="text-xl font-bold mb-3 title_color"><%= servicesContent.mainTitle %></h1>
+    
+    <div class="grid gap-2">
+      <% servicesContent.serviceCategories.forEach(function(category, index) { %>
+        <div class="overflow-hidden">
+          <div class="">
+            <h2 class="font-bold"><%= category.title %></h2>
+          </div>
+          <!-- <% if (servicesContent.image) { %> <img src="<%= servicesContent.image %>" alt="<%= servicesContent.image.alt %> image" class="w-full h-60 float-right ml-4 mb-4"> <% } %> -->
+          <div>
+            <% if (category.description) { %>
+              <p class="text-gray-600 mb-2"><%= category.description %></p>
+            <% } %>
+            <% if (category.items) { %>
+              <ul class="custom-list">
+                <% category.items.forEach(function(item) { %>
+                  <li class="text-gray-700"><%= item %></li>
+                <% }) %>
+              </ul>
+            <% } %>
+            <% if (category.benefits) { %>
+              <div class="mt-2">
+                <ul class="custom-list">
+                  <% category.benefits.forEach(function(benefit) { %>
+                    <li class="text-gray-700"><%= benefit %></li>
+                  <% }) %>
+                </ul>
+              </div>
+            <% } %>
+            <% if (category.services) { %>
+              <div class="mt-2">
+                <ul class="custom-list">
+                  <% category.services.forEach(function(service) { %>
+                    <li class="text-gray-700"><%= service %></li>
+                  <% }) %>
+                </ul>
+              </div>
+            <% } %>
+            <% if (category.features) { %>
+              <div class="mt-2">
+                <ul class="custom-list">
+                  <% category.features.forEach(function(feature) { %>
+                    <li class="text-gray-700"><%= feature %></li>
+                  <% }) %>
+                </ul>
+              </div>
+            <% } %>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  </main>
+
+  <footer class="text-center mt-8">
+    <div id="mainbodybottom1"></div>
+    <p class="text-white h-4" style="background-color:#102d6e;">Secure Mabridge © 2008-2012 All rights carefully reserved and preserved.</p>
+
+    <div class="h-auto flex flex-row float-right pr-14 pt-5 pb-8 text-right">
+      <img src="/assets/tw.png" width="80" height="23">&nbsp;&nbsp;
+      <img src="/assets/fb.jpg" width="82" height="23">
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+  <script src="/scripts/slider.js"></script>
+</body>
+</html>

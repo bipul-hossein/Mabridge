@@ -1,43 +1,25 @@
-import express from "express";
-import path from "path";
-import fs from "fs";
-import { fileURLToPath } from "url";
+const express = require("express");
+const path = require("path");
+const fs = require("fs");
+const moment = require("moment");
 
 const app = express();
-const port = 4000;
+const port = process.env.PORT || 5000;
 
-// Necessary for __dirname in ES modules
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-// Middleware to parse URL-encoded data
 app.use(express.urlencoded({ extended: true }));
-
-// Serve static files from the public directory
 app.use(express.static(path.join(__dirname, "public")));
 
 app.set("view engine", "ejs");
 
-const navItems = [
-  { name: "Home", href: "/" },
-  { name: "About Us", href: "/about-us" },
-  { name: "Services", href: "/services" },
-  { name: "Solutions", href: "/solutions" },
-  { name: "Training", href: "/training" },
-  { name: "Careers", href: "/career" },
-  { name: "Contact Us", href: "/contact" },
-];
+app.use((req, res, next) => {
+  res.locals.formattedDate = moment()
+    .format("dddd. MMMM DD. YYYY")
+    .toUpperCase();
+  next();
+});
 
-const bannerItems = [
-  { img: "/banner/about.png" },
-  { img: "/banner/career.png" },
-  { img: "/banner/contract.png" },
-  { img: "/banner/services.png" },
-  { img: "/banner/solution.png" },
-  { img: "/banner/training.png" },
-];
+const { navItems, bannerItems } = require("./data/data");
 
-// Route to render the homepage
 app.get("/", (req, res) => {
   fs.readFile(
     path.join(__dirname, "data", "data.json"),
@@ -49,22 +31,152 @@ app.get("/", (req, res) => {
         return;
       }
       const jsonData = JSON.parse(data);
-      res.render("index", { navItems, images: bannerItems, data: jsonData });
+
+      fs.readFile(
+        path.join(__dirname, "data", "content.json"),
+        "utf-8",
+        (err, contentData) => {
+          if (err) {
+            console.error(err);
+            res.status(500).send("Error reading content data");
+            return;
+          }
+          const contentJson = JSON.parse(contentData);
+          res.render("index", {
+            navItems,
+            images: bannerItems,
+            data: jsonData,
+            content: contentJson,
+            formattedDate: res.locals.formattedDate,
+          });
+        }
+      );
     }
   );
 });
 
-// Route to render the about-us page
 app.get("/about-us", (req, res) => {
-  res.render("about-us", { navItems, images: bannerItems });
+  fs.readFile(
+    path.join(__dirname, "data", "aboutContent.json"),
+    "utf-8",
+    (err, aboutContentData) => {
+      if (err) {
+        console.error(err);
+        res.status(500).send("Error reading about content data");
+        return;
+      }
+      const aboutContent = JSON.parse(aboutContentData);
+      res.render("about-us", {
+        navItems,
+        aboutContent,
+        formattedDate: res.locals.formattedDate,
+      });
+    }
+  );
 });
 
-// Handle 404 errors
+app.get("/services", (req, res) => {
+  fs.readFile(
+    path.join(__dirname, "data", "servicesContent.json"),
+    "utf-8",
+    (err, servicesContentData) => {
+      if (err) {
+        console.error(err);
+        res.status(500).send("Error reading services content data");
+        return;
+      }
+      const servicesContent = JSON.parse(servicesContentData);
+      res.render("services", {
+        navItems,
+        servicesContent,
+        formattedDate: res.locals.formattedDate,
+      });
+    }
+  );
+});
+
+app.get("/solutions", (req, res) => {
+  fs.readFile(
+    path.join(__dirname, "data", "solutionsContent.json"),
+    "utf-8",
+    (err, solutionsContentData) => {
+      if (err) {
+        console.error(err);
+        res.status(500).send("Error reading solutions content data");
+        return;
+      }
+      const solutionsContent = JSON.parse(solutionsContentData);
+      res.render("solutions", {
+        navItems,
+        solutionsContent,
+        formattedDate: res.locals.formattedDate,
+      });
+    }
+  );
+});
+
+app.get("/training", (req, res) => {
+  fs.readFile(
+    path.join(__dirname, "data", "trainingContent.json"),
+    "utf-8",
+    (err, trainingContentData) => {
+      if (err) {
+        console.error(err);
+        res.status(500).send("Error reading training content data");
+        return;
+      }
+      const trainingContent = JSON.parse(trainingContentData);
+      res.render("training", {
+        navItems,
+        trainingContent,
+        formattedDate: res.locals.formattedDate,
+      });
+    }
+  );
+});
+app.get("/career", (req, res) => {
+  fs.readFile(
+    path.join(__dirname, "data", "careerContent.json"),
+    "utf-8",
+    (err, careerContentData) => {
+      if (err) {
+        console.error(err);
+        res.status(500).send("Error reading training content data");
+        return;
+      }
+      const careerContent = JSON.parse(careerContentData);
+      res.render("career", {
+        navItems,
+        careerContent,
+        formattedDate: res.locals.formattedDate,
+      });
+    }
+  );
+});
+app.get("/contact", (req, res) => {
+  fs.readFile(
+    path.join(__dirname, "data", "contactContent.json"),
+    "utf-8",
+    (err, contactContentData) => {
+      if (err) {
+        console.error(err);
+        res.status(500).send("Error reading training content data");
+        return;
+      }
+      const contactContent = JSON.parse(contactContentData);
+      res.render("contact", {
+        navItems,
+        contactContent,
+        formattedDate: res.locals.formattedDate,
+      });
+    }
+  );
+});
+
 app.use((req, res) => {
   res.status(404).render("404");
 });
 
-// Start the server
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });

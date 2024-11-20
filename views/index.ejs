@@ -6,29 +6,38 @@
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
   <link rel="stylesheet" href="/styles/style.css">
-  <title>Custom Banner Slider</title>
+  <title>Mabridge</title>
 </head>
 <body>
 
   <!-- navbar -->
   <div id="wrapper">
     <div id="header">
-        <!-- <a href="index.php"><img src="images/icon1.jpg" width="13" height="19" ></a>
-            <a href="index.php?link=aboutus"><img src="assets/icon2.jpg" width="12" height="19" style="margin: 0 15px;"></a>
-              <a href="index.php?link=contact"><img src="assets/icon3.jpg" width="13" height="19" ></a><br>
-        MONDAY. NOVEMBER 18. 2024 -->
+        <div class="flex flex-row">
+          <a href="index.php">
+              <img src="/assets/icon1.jpg" width="13" height="19" >
+          </a>
+          <a href="index.php?link=aboutus">
+            <img src="/assets/icon2.jpg" width="12" height="19" style="margin: 0 15px;">
+          </a>
+          <a href="index.php?link=contact">
+              <img src="/assets/icon3.jpg" width="13" height="19" >
+          </a>
+        </div>
+        <%= formattedDate %>
       </div>
-        <div id="logo">
+    <div id="logo">
+      <p class="text-2xl font-bold text-white text-center py-2 ">Mabridge</p>
     </div>
-          <nav class="flex items-center">
-            <% navItems.forEach(function(item) { %>
-              <a href="<%= item.href %>" class="nav_text text-sm font-medium text-center w-full text-white hover:bg-blue-400 hover:text-black"><%= item.name %></a>
-            <% }) %>
-          </nav>
+    <nav class="flex items-center">
+      <% navItems.forEach(function(item) { %>
+        <a href="<%= item.href %>" class="nav_text text-sm font-medium text-center w-full text-white hover:bg-blue-400 hover:text-black"><%= item.name %></a>
+      <% }) %>
+    </nav>
   </div>
 
   <!-- banner -->
-  <div class="swiper-container container mx-auto">
+  <div class="swiper-container">
     <div class="swiper-wrapper">
       <% images.forEach(function(image) { %>
         <div class="swiper-slide">
@@ -43,43 +52,26 @@
     <div class="swiper-button-prev"></div>
   </div>
 
-
   <!-- main container -->
-  <main class="container mx-auto mt-5 pb-2">
+  <main class="mt-5 pb-2">
     <div class="flex justify-between">
       <div class="container1 w-full">
-        <h2 class="text-xl font-bold mb-3 title_home">Secure Info-Tech Solutions (SITS)</h2>
-        <p class="text-black mb-4">
-          <b>Secure Info-Tech Solutions (SITS)</b> is an IT services firm that specializes in Consulting services, Training, Software
-          Development, Software Quality Assurance and Application Supports to the Information Technology (IT) Industry. Our
-          technical expertise lies in the implementation of strategic QA strategies and the latest QA testing tools.
-        </p>
-        <p class="text-black">
-          Our consulting and projects divisions allow for on-site, off-site development and supports. We provide clients end-to-end
-          business solutions. We focus on continually improving and excelling at our services to be the best in the industry while
-          Finding Solutions to complex business problems.
-        </p>
-        <a href="/about-us" class="text-yellow-700 underline ">Read More</a>
+        <h2 class="text-xl font-bold mb-3 title_color"><%= content.mainContainer.title %></h2>
+        <% content.mainContainer.paragraphs.forEach((paragraph, index) => { %>
+          <p class="text-black <% if (index < content.mainContainer.paragraphs.length - 1) { %> mb-4 <% } %>"><%= paragraph %></p>
+        <% }) %>
+        <a href="<%= content.mainContainer.readMoreLink %>" class="text-yellow-700 underline">Read More</a>
       </div>
       <div class="container2">
-        <h2 class="text-2xl font-bold mb-4 title_home">News & Events</h2>
+        <h2 class="text-2xl font-bold mb-4 title_home"><%= content.mainContainer.newsTitle %></h2>
         <marquee class="bg-white" scrollamount="3" direction="up" loop="true" width="100%" height="100px;">
-          <b>Deploy Customize SharePoint Solutions</b><br>
-          <br>
-          <b>I-Phone Apps</b><br>
-          <br>
-          <b>Health Care IT Service</b><br>
-          <br>
-          <b>Data Modeling Development</b><br>
-                        <br>
-          <b>Deploy IT infrastructure solutions</b><br>
-                        <br>
-          <b>Data Centre Security</b>
+          <% content.mainContainer.newsItems.forEach(function(newsItem) { %>
+            <b><%= newsItem %></b><br><br>
+          <% }) %>
         </marquee>
       </div>
     </div>
   </main>
-
 
   <div class="grid grid-cols-3 gap-8 mt-3">
     <!-- Services Section -->
@@ -126,7 +118,6 @@
       </div>
     </div>
 
-
     <!-- Training Section -->
      <div class="w-[300px] h-[201px] mt-0 bg-no-repeat bg-cover" style="background-image: url('/assets/box.jpg');">
       <div class="card-header text-[17px] pt-2 pl-5" >
@@ -151,10 +142,16 @@
 
   </div>
   
-<!-- Footer -->
-<footer class="text-center mt-8">
-  <p class="text-white py-1" style="background-color:#102d6e;">Secure Info-Tech Solutions © 2008-2012 All rights carefully reserved and preserved.</p>
-</footer>
+  <!-- Footer -->
+  <footer class="text-center mt-8 ">
+    <div id="mainbodybottom1"></div>
+    <p class="text-white h-4" style="background-color:#102d6e;">Secure Mabridge © 2008-2012 All rights carefully reserved and preserved.</p>
+
+    <div class="h-auto flex flex-row float-right pr-14 pt-5 pb-8 text-right">
+      <img src="/assets/tw.png" width="80" height="23">&nbsp;&nbsp;
+      <img src="/assets/fb.jpg" width="82" height="23">
+    </div>
+  </footer>
   
   <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
   <script src="/scripts/slider.js"></script>

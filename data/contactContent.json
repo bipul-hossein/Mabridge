@@ -1,0 +1,35 @@
+{
+  "mainTitle": "CONTACT US",
+  "careerCategories": [
+    {
+      "title": "Secure Info-Tech Solutions (SITS)",
+      "description": "Customized training on specific Software for the corporate needs."
+    },
+    {
+      "description": "Experienced Technical Professional-Advanced program where professional are taught specific Software Tools and New Technology needed for Career Advancement"
+    },
+    {
+      "title": "We have opportunities in various fields including:",
+      "benefits": [
+        "Software Development",
+        "Agile/SCRUM",
+        "Data Warehousing and Business Intelligence",
+        "Project Management",
+        "Software Quality Assurance",
+        "Software Test Engineering",
+        "Java/J2EE",
+        "Oracle",
+        "Net",
+        "Networking",
+        "Application Support"
+      ],
+      "type": "non-technical"
+    }
+  ],
+  "image": {
+    "src": "/assets/about2.jpg",
+    "alt": "Professional working on computer",
+    "width": 800,
+    "height": 600
+  }
+}
