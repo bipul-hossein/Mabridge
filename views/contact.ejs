@@ -31,7 +31,7 @@
     </div>
     <nav class="flex items-center">
       <% navItems.forEach(function(item) { %>
-        <a href="<%= item.href %>" class="nav_text text-sm font-medium text-center w-full text-white hover:bg-blue-400 hover:text-black"><%= item.name %></a>
+        <a href="<%= item.href %>" class="nav_text text-xs font-bold text-center w-full text-white hover:bg-blue-400 hover:text-black"><%= item.name %></a>
       <% }) %>
     </nav>
   </div>
@@ -40,36 +40,86 @@
   <div class="">
     <img src="/banner/training.png" alt="Training background" class="w-full h-full ">
   </div>
-
   <!-- Main Content -->
   <main class="mt-2 mb-8">
-    <h1 class="text-xl font-bold mb-3 title_color"><%= contactContent.mainTitle %></h1>
-    
-    <div class="grid grid-cols-3 gap-4">
-        <div class="col-span-2 space-y-6">
-            <% contactContent.careerCategories.forEach(function(category, index) { %>
-                <div>
-                    <h2 class="font-semibold mb-3 inline"><%= category.title %></h2>
-                    <% if (category.description) { %>
-                    <span class="text-gray-600"><%= category.description %></span>
-                    <% } %>
-                </div>
-                <% if (category.benefits) { %>
-                    <ul class="custom-list">
-                        <% category.benefits.forEach(function(topic) { %>
-                        <li class="text-gray-700"><%= topic %></li>
-                        <% }) %>
-                    </ul>
-                <% } %>
-
-            <% }) %>
+    <!-- Contact Info -->
+    <h2 class="text-blue-800 font-semibold text-lg">CONTACT US</h2>
+    <div class="grid grid-cols-2 gap-4">
+      <section class="space-y-4">
+        <div class="flex gap-4">
+          <img src="/assets/building.jpg" alt="Office Image" class="h-40">
+          <div>
+            <address class="text-gray-600">
+              <b>SITS -Secure Info-Tech Solutions, LLC</b><br>
+                13800 Coppermine Road<br>
+                Herndon, VA 20171<br>
+                Phone: 703-787-0268<br>
+                Fax: 703-234-1201<br>
+                Email: <a href="mailto:info@sitstechs.com" class="text-blue-600 hover:underline">.....com</a>
+            </address>
         </div>
+      </div>
+        <!-- <img src="/map.jpg" alt="Map" class="w-full h-40 object-cover rounded"> -->
+    </section>
 
-        <% if (contactContent.image) { %>
-            <img src="<%= contactContent.image.src %>" alt="<%= contactContent.image.alt %>" class="col-span-1 w-full h-60 float-right ml-4 mb-4">
-        <% } %>
-    </div>
-  </main>
+    <!-- Contact Form -->
+    <section class="">
+      <form class="space-y-4">
+        <div class="space-y-4">
+          <div class="flex">
+            <label for="firstName" class="w-1/4 text-xs font-bold">First Name:</label>
+            <input type="text" id="firstName" name="firstName" class="flex-grow border border-black focus:ring-blue-500 focus:border-blue-500">
+          </div>
+          <div class="flex">
+            <label for="lastName" class="w-1/4 text-xs font-bold">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" class="flex-grow border border-black focus:ring-blue-500 focus:border-blue-500">
+          </div>
+          <div class="flex">
+            <label for="companyName" class="w-1/4 text-xs font-bold">Company Name:</label>
+            <input type="text" id="companyName" name="companyName" class="flex-grow border border-black focus:ring-blue-500 focus:border-blue-500">
+          </div>
+          <div class="flex">
+            <label for="jobTitle" class="w-1/4 text-xs font-bold">Job Title:</label>
+            <input type="text" id="jobTitle" name="jobTitle" class="flex-grow border border-black focus:ring-blue-500 focus:border-blue-500">
+          </div>
+          <div class="flex">
+            <label for="email" class="w-1/4 text-xs font-bold">Email Address:</label>
+            <input type="email" id="email" name="email" class="flex-grow border border-black focus:ring-blue-500 focus:border-blue-500">
+          </div>
+          <div class="flex">
+            <label for="phone" class="w-1/4 text-xs font-bold">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" class="flex-grow border border-black focus:ring-blue-500 focus:border-blue-500">
+          </div>
+          <div class="flex md:col-span-2">
+            <label for="address" class="w-1/4 text-xs font-bold">Address:</label>
+            <input type="text" id="address" name="address" class="flex-grow border border-black focus:ring-blue-500 focus:border-blue-500">
+          </div>
+          <div class="flex">
+            <label for="city" class="w-1/4 text-xs font-bold">City:</label>
+            <input type="text" id="city" name="city" class="flex-grow border border-black focus:ring-blue-500 focus:border-blue-500">
+          </div>
+          <div class="flex">
+            <label for="state" class="w-1/4 text-xs font-bold">State:</label>
+            <input type="text" id="state" name="state" class="flex-grow border border-black shadow-sm focus:ring-blue-500 focus:border-blue-500">
+          </div>
+          <div class="flex">
+            <label for="zip" class="w-1/4 text-xs font-bold">Zip Code:</label>
+            <input type="text" id="zip" name="zip" class="flex-grow border border-black focus:ring-blue-500 focus:border-blue-500">
+          </div>
+          <div class="flex md:col-span-2">
+            <label for="comments" class="w-1/4 text-xs font-bold">Comments:</label>
+            <textarea id="comments" name="comments" rows="4" class="flex-grow border border-black focus:ring-blue-500 focus:border-blue-500"></textarea>
+          </div>
+        </div>
+        <div class="flex mt-4">
+          <input type="checkbox" id="certify" name="certify" class="h-4 w-4 focus:ring-blue-500 border border-black">
+          <label for="certify" class="ml-2 block text-xs">I Certify that above information is correct.</label>
+        </div>
+        <button type="submit" class="mt-4 bg-gray-300 border border-black py-1 px-3 hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Submit</button>
+      </form> 
+    </section>
+  </div>
+</main>
 
   <footer class="text-center mt-8">
     <div id="mainbodybottom1"></div>
@@ -84,4 +134,6 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
   <script src="/scripts/slider.js"></script>
 </body>
-</html>
+</html> 
+
+
