@@ -13,25 +13,25 @@
   <!-- navbar -->
   <div id="wrapper">
     <div id="header">
-      <div class="flex flex-row">
-        <a href="/">
-          <img src="/assets/icon1.jpg" width="13" height="19">
-        </a>
-        <a href="/about-us">
-          <img src="/assets/icon2.jpg" width="12" height="19" style="margin: 0 15px;">
-        </a>
-        <a href="/contact">
-          <img src="/assets/icon3.jpg" width="13" height="19">
-        </a>
+        <div class="flex flex-row">
+          <a href="index.php">
+              <img src="/assets/icon1.jpg" width="13" height="19" >
+          </a>
+          <a href="index.php?link=aboutus">
+            <img src="/assets/icon2.jpg" width="12" height="19" style="margin: 0 15px;">
+          </a>
+          <a href="index.php?link=contact">
+              <img src="/assets/icon3.jpg" width="13" height="19" >
+          </a>
+        </div>
+        <%= formattedDate %>
       </div>
-      <%= formattedDate %>
-    </div>
     <div id="logo">
-      <p class="text-2xl font-bold text-white text-center py-2">Mabridge</p>
+      <p class="text-2xl font-bold text-white text-center py-2 ">Mabridge</p>
     </div>
     <nav class="flex items-center">
       <% navItems.forEach(function(item) { %>
-        <a href="<%= item.href %>" class="nav_text text-xs font-bold text-center w-full text-white hover:bg-blue-400 hover:text-black"><%= item.name %></a>
+        <a href="<%= item.href %>" class="nav_text text-sm font-medium text-center w-full text-white hover:bg-blue-400 hover:text-black"><%= item.name %></a>
       <% }) %>
     </nav>
   </div>
@@ -43,11 +43,11 @@
   <!-- Main Content -->
   <main class="mt-2 mb-8">
     <!-- Contact Info -->
-    <h2 class="text-blue-800 font-semibold text-lg">CONTACT US</h2>
-    <div class="grid grid-cols-2 gap-4">
+    <h2 class="text-blue-800 font-semibold text-lg mb-4">CONTACT US</h2>
+    <div class="grid grid-cols-2 gap-8">
       <section class="space-y-4">
-        <div class="flex gap-4">
-          <img src="/assets/building.jpg" alt="Office Image" class="h-40">
+        <div class="flex flex-col gap-4">
+          <img src="/assets/building.jpg" alt="Office Image" class="">
           <div>
             <address class="text-gray-600">
               <b>SITS -Secure Info-Tech Solutions, LLC</b><br>
@@ -59,63 +59,33 @@
             </address>
         </div>
       </div>
-        <!-- <img src="/map.jpg" alt="Map" class="w-full h-40 object-cover rounded"> -->
-    </section>
+     </section>
 
-    <!-- Contact Form -->
-    <section class="">
+      <!-- Contact Form -->
+     <section class="">
       <form class="space-y-4">
         <div class="space-y-4">
           <div class="flex">
-            <label for="firstName" class="w-1/4 text-xs font-bold">First Name:</label>
-            <input type="text" id="firstName" name="firstName" class="flex-grow border border-black focus:ring-blue-500 focus:border-blue-500">
+            <input type="text" id="firstName" name="firstName" placeholder="NAME" class="flex-grow border border-black focus:ring-blue-500 focus:border-blue-500 p-2 ">
           </div>
           <div class="flex">
-            <label for="lastName" class="w-1/4 text-xs font-bold">Last Name:</label>
-            <input type="text" id="lastName" name="lastName" class="flex-grow border border-black focus:ring-blue-500 focus:border-blue-500">
+            <input type="email" id="email" name="email" placeholder="EMAIL" class="flex-grow border border-black focus:ring-blue-500 focus:border-blue-500 p-2">
           </div>
           <div class="flex">
-            <label for="companyName" class="w-1/4 text-xs font-bold">Company Name:</label>
-            <input type="text" id="companyName" name="companyName" class="flex-grow border border-black focus:ring-blue-500 focus:border-blue-500">
+            <input type="tel" id="phone" name="phone" placeholder="PHONE" class="flex-grow border border-black focus:ring-blue-500 focus:border-blue-500 p-2">
           </div>
-          <div class="flex">
-            <label for="jobTitle" class="w-1/4 text-xs font-bold">Job Title:</label>
-            <input type="text" id="jobTitle" name="jobTitle" class="flex-grow border border-black focus:ring-blue-500 focus:border-blue-500">
-          </div>
-          <div class="flex">
-            <label for="email" class="w-1/4 text-xs font-bold">Email Address:</label>
-            <input type="email" id="email" name="email" class="flex-grow border border-black focus:ring-blue-500 focus:border-blue-500">
-          </div>
-          <div class="flex">
-            <label for="phone" class="w-1/4 text-xs font-bold">Phone Number:</label>
-            <input type="tel" id="phone" name="phone" class="flex-grow border border-black focus:ring-blue-500 focus:border-blue-500">
+          <div class="flex md:col-span-2"> 
+            <input type="text" id="address" name="address" placeholder="ADDRESS" class="flex-grow border border-black focus:ring-blue-500 focus:border-blue-500 p-2">
           </div>
           <div class="flex md:col-span-2">
-            <label for="address" class="w-1/4 text-xs font-bold">Address:</label>
-            <input type="text" id="address" name="address" class="flex-grow border border-black focus:ring-blue-500 focus:border-blue-500">
-          </div>
-          <div class="flex">
-            <label for="city" class="w-1/4 text-xs font-bold">City:</label>
-            <input type="text" id="city" name="city" class="flex-grow border border-black focus:ring-blue-500 focus:border-blue-500">
-          </div>
-          <div class="flex">
-            <label for="state" class="w-1/4 text-xs font-bold">State:</label>
-            <input type="text" id="state" name="state" class="flex-grow border border-black shadow-sm focus:ring-blue-500 focus:border-blue-500">
-          </div>
-          <div class="flex">
-            <label for="zip" class="w-1/4 text-xs font-bold">Zip Code:</label>
-            <input type="text" id="zip" name="zip" class="flex-grow border border-black focus:ring-blue-500 focus:border-blue-500">
-          </div>
-          <div class="flex md:col-span-2">
-            <label for="comments" class="w-1/4 text-xs font-bold">Comments:</label>
-            <textarea id="comments" name="comments" rows="4" class="flex-grow border border-black focus:ring-blue-500 focus:border-blue-500"></textarea>
+            <textarea id="comments" name="comments" placeholder="MESSAGE" rows="4" class="flex-grow border border-black focus:ring-blue-500 focus:border-blue-500 p-2"></textarea>
           </div>
         </div>
-        <div class="flex mt-4">
+        <!-- <div class="flex mt-4">
           <input type="checkbox" id="certify" name="certify" class="h-4 w-4 focus:ring-blue-500 border border-black">
           <label for="certify" class="ml-2 block text-xs">I Certify that above information is correct.</label>
-        </div>
-        <button type="submit" class="mt-4 bg-gray-300 border border-black py-1 px-3 hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Submit</button>
+        </div> -->
+        <button type="submit" class="mt-4 text-lg font-bold text-white bg-blue-500 border border-black py-1 px-3 hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Submit</button>
       </form> 
     </section>
   </div>
