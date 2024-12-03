@@ -1,0 +1,15 @@
+  <!-- banner -->
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <% images.forEach(function(image) { %>
+        <div class="swiper-slide">
+          <img src="<%= image.img %>" alt="Image">
+        </div>
+      <% }) %>
+    </div>
+    <div class="swiper-pagination pagination-containe">
+      <div class="pagination-dots flex space-x-2"></div>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>

@@ -1,40 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="/styles/style.css">
-  <title>Mabridge - Training</title>
-</head>
-<body>
-
-  <!-- navbar -->
-  <div id="wrapper">
-    <div id="header">
-      <div class="flex flex-row">
-        <a href="/">
-          <img src="/assets/icon1.jpg" width="13" height="19">
-        </a>
-        <a href="/about-us">
-          <img src="/assets/icon2.jpg" width="12" height="19" style="margin: 0 15px;">
-        </a>
-        <a href="/contact">
-          <img src="/assets/icon3.jpg" width="13" height="19">
-        </a>
-      </div>
-      <%= formattedDate %>
-    </div>
-    <div id="logo">
-      <p class="text-2xl font-bold text-white text-center py-2">Mabridge</p>
-    </div>
-    <nav class="flex items-center">
-      <% navItems.forEach(function(item) { %>
-        <a href="<%= item.href %>" class="nav_text text-sm font-medium text-center w-full text-white hover:bg-blue-400 hover:text-black"><%= item.name %></a>
-      <% }) %>
-    </nav>
-  </div>
+<%- include("layout/header")  %>
 
   <!-- Hero Section -->
   <div class="">
@@ -71,17 +35,5 @@
     </div>
   </main>
 
-  <footer class="text-center mt-8">
-    <div id="mainbodybottom1"></div>
-    <p class="text-white h-4" style="background-color:#102d6e;">Secure Mabridge © 2008-2012 All rights carefully reserved and preserved.</p>
-
-    <div class="h-auto flex flex-row float-right pr-14 pt-5 pb-8 text-right">
-      <img src="/assets/tw.png" width="80" height="23">&nbsp;&nbsp;
-      <img src="/assets/fb.jpg" width="82" height="23">
-    </div>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-  <script src="/scripts/slider.js"></script>
-</body>
-</html>
+ <!-- Footer -->
+ <%- include("layout/footer")  %>

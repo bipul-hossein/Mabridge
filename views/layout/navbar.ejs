@@ -1,0 +1,25 @@
+ <!-- navbar -->
+ <div id="wrapper">
+    <div id="header">
+        <div class="flex flex-row">
+          <a href="index.php">
+              <img src="/assets/icon1.jpg" width="13" height="19" >
+          </a>
+          <a href="index.php?link=aboutus">
+            <img src="/assets/icon2.jpg" width="12" height="19" style="margin: 0 15px;">
+          </a>
+          <a href="index.php?link=contact">
+              <img src="/assets/icon3.jpg" width="13" height="19" >
+          </a>
+        </div>
+        <%= formattedDate %>
+      </div>
+    <div id="logo">
+      <p class="text-2xl font-bold text-white text-center py-2 ">Mabridge</p>
+    </div>
+    <nav class="flex items-center">
+      <% navItems.forEach(function(item) { %>
+        <a href="<%= item.href %>" class="nav_text text-sm font-medium text-center w-full text-white hover:bg-blue-400 hover:text-black"><%= item.name %></a>
+      <% }) %>
+    </nav>
+  </div>
