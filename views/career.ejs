@@ -9,7 +9,7 @@
   <main class="mt-2 mb-8">
     <h1 class="text-xl font-bold mb-3 title_color"><%= careerContent.mainTitle %></h1>
     
-    <div class="grid grid-cols-3 gap-4">
+    <div class="md:grid md:grid-cols-3 md:gap-4">
         <div class="col-span-2 space-y-6">
             <% careerContent.careerCategories.forEach(function(category, index) { %>
                 <div>
@@ -30,7 +30,9 @@
         </div>
 
         <% if (careerContent.image) { %>
+          <div class="hidden md:block col-span-1 h-[400px] md:h-auto">
             <img src="<%= careerContent.image.src %>" alt="<%= careerContent.image.alt %>" class="col-span-1 w-full h-60 float-right mb-4">
+          </div>
         <% } %>
     </div>
   </main>
