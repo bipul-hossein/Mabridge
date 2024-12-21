@@ -3,27 +3,29 @@
 <%- include("layout/banner")  %>
 
   <!-- main container -->
-  <main class="mt-5 pb-2">
-    <div class="flex justify-between">
-      <div class="container1 w-full">
-        <h2 class="text-xl font-bold mb-3 title_color"><%= content.mainContainer.title %></h2>
-        <% content.mainContainer.paragraphs.forEach((paragraph, index) => { %>
-          <p class="text-black <% if (index < content.mainContainer.paragraphs.length - 1) { %> mb-4 <% } %>"><%= paragraph %></p>
-        <% }) %>
-        <a href="<%= content.mainContainer.readMoreLink %>" class="text-yellow-700 underline">Read More</a>
-      </div>
-      <div class="container2">
-        <h2 class="text-2xl font-bold mb-4 title_home"><%= content.mainContainer.newsTitle %></h2>
-        <marquee class="bg-white" scrollamount="3" direction="up" loop="true" width="100%" height="100px;">
-          <% content.mainContainer.newsItems.forEach(function(newsItem) { %>
-            <b><%= newsItem %></b><br><br>
-          <% }) %>
-        </marquee>
-      </div>
+  <main class="pb-2">
+    <div class="flex flex-col-reverse md:flex-row justify-between">
+        <div class="container1 w-full mt-2">
+            <h2 class="text-xl font-bold mb-3 title_color"><%= content.mainContainer.title %></h2>
+            <% content.mainContainer.paragraphs.forEach((paragraph, index) => { %>
+                <p class="text-black <% if (index < content.mainContainer.paragraphs.length - 1) { %> mb-4 <% } %>"><%= paragraph %></p>
+            <% }) %>
+            <a href="<%= content.mainContainer.readMoreLink %>" class="text-yellow-700 underline">Read More</a>
+        </div>
+        <div class="container2 overflow-hidden">
+            <div class="bg-white flex md:flex-col items-center">
+                <div class="bg-gray-100 md:bg-transparent md:mb-4 text-lg md:text-2xl font-bold pr-2 no-wrap"><%= content.mainContainer.newsTitle %></div>
+                <marquee id="news-marquee" class="bg-white" scrollamount="3">
+                    <% content.mainContainer.newsItems.forEach(function(newsItem) { %>
+                      <b class="marquee-item"><%= newsItem %></b>&nbsp;&nbsp;&nbsp;
+                    <% }) %>
+                </marquee>
+            </div>
+        </div>
     </div>
   </main>
 
-  <div class="grid grid-cols-3 gap-8 mt-3">
+  <div class="grid grid-cols-1 md:grid-cols-3 md:gap-8 mt-3">
     <!-- Services Section -->
     <div class="w-[300px] h-[201px] mt-0 bg-no-repeat bg-cover" style="background-image: url('/assets/box.jpg');">
       <div class="card-header text-[17px] pt-2 pl-5" >
@@ -94,3 +96,4 @@
   
   <!-- Footer -->
   <%- include("layout/footer")  %>
+

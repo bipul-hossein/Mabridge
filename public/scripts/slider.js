@@ -2,6 +2,7 @@
 
 const swiper = new Swiper(".swiper-container", {
   loop: true,
+  effect: "fade",
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
@@ -58,3 +59,36 @@ function showNextSlide() {
 
 createPagination();
 setInterval(showNextSlide, 2500); // Maintain interval at 2.5 seconds
+
+// home page marquee tag
+function adjustMarqueeDirection() {
+  var marquee = document.getElementById("news-marquee");
+  if (window.innerWidth <= 768) {
+    // Small devices
+    marquee.setAttribute("direction", "left");
+  } else {
+    // Larger devices
+    marquee.setAttribute("direction", "up");
+  }
+}
+
+// Adjust marquee direction on load and resize
+window.addEventListener("load", adjustMarqueeDirection);
+window.addEventListener("resize", adjustMarqueeDirection);
+
+// Ensure the marquee tag behaves correctly
+function enforceMarqueeBehavior() {
+  var marquee = document.getElementById("news-marquee");
+  if (marquee.getAttribute("direction") !== "up" && window.innerWidth > 768) {
+    marquee.setAttribute("direction", "up");
+  }
+  if (
+    marquee.getAttribute("direction") !== "left" &&
+    window.innerWidth <= 768
+  ) {
+    marquee.setAttribute("direction", "left");
+  }
+}
+
+// Check marquee direction every 500ms to enforce correct behavior
+setInterval(enforceMarqueeBehavior, 500);
