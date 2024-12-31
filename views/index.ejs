@@ -2,15 +2,17 @@
 
 <%- include("layout/banner")  %>
 
+
+
   <!-- main container -->
   <main class="pb-2">
     <div class="flex flex-col-reverse md:flex-row justify-between">
         <div class="container1 w-full mt-2">
-            <h2 class="text-xl font-bold mb-3 title_color"><%= content.mainContainer.title %></h2>
+            <h2 class="text-xl font-bold mb-3 text-primary-dark"><%= content.mainContainer.title %></h2>
             <% content.mainContainer.paragraphs.forEach((paragraph, index) => { %>
                 <p class="text-black <% if (index < content.mainContainer.paragraphs.length - 1) { %> mb-4 <% } %>"><%= paragraph %></p>
             <% }) %>
-            <a href="<%= content.mainContainer.readMoreLink %>" class="text-yellow-700 underline">Read More</a>
+            <a href="<%= content.mainContainer.readMoreLink %>" class="text-secondary hover:text-accent transition-colors underline">Read More</a>
         </div>
         <div class="container2 overflow-hidden">
             <div class="bg-white flex md:flex-col items-center">
@@ -29,21 +31,21 @@
     <!-- Services Section -->
     <div class="w-[300px] h-[201px] mt-0 bg-no-repeat bg-cover" style="background-image: url('/assets/box.jpg');">
       <div class="card-header text-[17px] pt-2 pl-5" >
-        <h2 class="card-title text-base leading-none mb-4" style="color: #102d6e ;">Services</h2>
+        <h2 class="text-primary-dark font-bold text-base leading-none mb-4 ">Services</h2>
       </div>
       <div class="card-content pt-4 pl-10">
         <ul class="">
           <% data.services.forEach(function(service) { %>
-            <li class="flex items-center space-x-2" style="color: #102d6e ;">
+            <li class="flex items-center space-x-2 text-gray-600 hover:text-accent">
               <span class="h-2 w-2" style="background-image: url('/assets/bullet.jpg');"></span>
-              <a href="#" class="text-xs hover:text-blue-500"><%= service %></a>
+              <a href="#" class="text-xs hover:text-accent"><%= service %></a>
             </li>
           <% }) %>
         </ul>
         <br>
-        <div class="flex items-center justify-end pb-1" style="color: #102d6e ;">
+        <div class="flex items-center justify-end pb-1">
           <span class="h-3 w-4" style="background-image: url('/assets/more.jpg');"></span>
-          <a href="/services" class="text-xs hover:underline block pr-1">More</a>
+          <a href="/services" class="text-xs hover:underline block pr-1 text-secondary hover:text-accent transition-colors">More</a>
         </div>
       </div>
     </div>
@@ -51,21 +53,21 @@
     <!-- Solutions Section -->
      <div class="w-[300px] h-[201px] mt-0 bg-no-repeat bg-cover" style="background-image: url('/assets/box.jpg');">
       <div class="card-header text-[17px] pt-2 pl-5" >
-        <h2 class="card-title text-base leading-none mb-4" style="color: #102d6e ;">Solutions</h2>
+        <h2 class="text-primary-dark font-bold text-base leading-none mb-4">Solutions</h2>
       </div>
       <div class="card-content pt-4 pl-10">
         <ul class="">
           <% data.services.forEach(function(solution) { %>
-            <li class="flex items-center space-x-2" style="color: #102d6e ;">
+            <li class="flex items-center space-x-2 text-gray-600 hover:text-accent">
               <span class="h-2 w-2" style="background-image: url('/assets/bullet.jpg');"></span>
-              <a href="#" class="text-xs hover:text-blue-500"><%= solution %></a>
+              <a href="#" class="text-xs"><%= solution %></a>
             </li>
           <% }) %>
         </ul>
         <br>
-        <div class="flex items-center justify-end pb-1" style="color: #102d6e ;">
+        <div class="flex items-center justify-end pb-1">
           <span class="h-3 w-4" style="background-image: url('/assets/more.jpg');"></span>
-          <a href="/services" class="text-xs hover:underline block pr-1">More</a>
+          <a href="/services" class="text-xs hover:underline block pr-1 text-secondary hover:text-accent transition-colors">More</a>
         </div>
       </div>
     </div>
@@ -73,21 +75,21 @@
     <!-- Training Section -->
      <div class="w-[300px] h-[201px] mt-0 bg-no-repeat bg-cover" style="background-image: url('/assets/box.jpg');">
       <div class="card-header text-[17px] pt-2 pl-5" >
-        <h2 class="card-title text-base leading-none mb-4" style="color: #102d6e ;">Training</h2>
+        <h2 class="text-primary-dark font-bold text-base leading-none mb-4">Training</h2>
       </div>
       <div class="card-content pt-4 pl-10">
         <ul class="">
           <% data.services.forEach(function(training) { %>
-            <li class="flex items-center space-x-2" style="color: #102d6e ;">
+            <li class="flex items-center space-x-2 text-gray-600 hover:text-accent">
               <span class="h-2 w-2" style="background-image: url('/assets/bullet.jpg');"></span>
-              <a href="#" class="text-xs hover:text-blue-500"><%= training %></a>
+              <a href="#" class="text-xs "><%= training %></a>
             </li>
           <% }) %>
         </ul>
         <br>
-        <div class="flex items-center justify-end pb-1" style="color: #102d6e ;">
+        <div class="flex items-center justify-end pb-1">
           <span class="h-3 w-4" style="background-image: url('/assets/more.jpg');"></span>
-          <a href="/services" class="text-xs hover:underline block pr-1">More</a>
+          <a href="/services" class="text-xs hover:underline block pr-1 text-secondary hover:text-accent transition-colors">More</a>
         </div>
       </div>
     </div>

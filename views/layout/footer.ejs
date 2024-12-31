@@ -1,15 +1,70 @@
- <!-- Footer -->
- <footer class="text-center mt-8 ">
-    <div id="mainbodybottom1"></div>
-    <p class="text-white h-4" style="background-color:#102d6e;">Secure Mabridge © 2008-2012 All rights carefully reserved and preserved.</p>
+<footer class="bg-gray-100 pt-12 pb-4 mt-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Company Info -->
+      <div class="space-y-4">
+        <h4 class="text-xl font-semibold text-primary-dark">Mabridge</h4>
+        <p class="text-gray-600">
+          Secure Info-Tech Solutions for your business needs
+        </p>
+      </div>
 
-    <div class="h-auto flex flex-row float-right md:pr-14 pt-5 pb-8 text-right">
-      <img src="/assets/tw.png" width="80" height="23">&nbsp;&nbsp;
-      <img src="/assets/fb.jpg" width="82" height="23">
+      <!-- Quick Links -->
+      <div class="space-y-4">
+        <h4 class="text-xl font-semibold text-primary-dark">Quick Links</h4>
+        <ul class="space-y-2">
+          <li>
+            <a href="/services" class="text-gray-600 hover:text-accent transition-colors">
+              Services
+            </a>
+          </li>
+          <li>
+            <a href="/solutions" class="text-gray-600 hover:text-accent transition-colors">
+              Solutions
+            </a>
+          </li>
+          <li>
+            <a href="/training" class="text-gray-600 hover:text-accent transition-colors">
+              Training
+            </a>
+          </li>
+          <li>
+            <a href="/contact" class="text-gray-600 hover:text-accent transition-colors">
+              Contact
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Connect -->
+      <div class="space-y-4">
+        <h4 class="text-xl font-semibold text-primary-dark">Connect With Us</h4>
+        <div class="flex space-x-4">
+          <a href="#" aria-label="Twitter" class="text-primary hover:text-accent transition-colors">
+            <i class="fab fa-twitter text-2xl"></i>
+          </a>
+          <a href="#" aria-label="Facebook" class="text-primary hover:text-accent transition-colors">
+            <i class="fab fa-facebook text-2xl"></i>
+          </a>
+          <a href="#" aria-label="LinkedIn" class="text-primary hover:text-accent transition-colors">
+            <i class="fab fa-linkedin text-2xl"></i>
+          </a>
+        </div>
+      </div>
     </div>
-  </footer>
+
+    <!-- Copyright -->
+    <div class="mt-8 pt-8 border-t border-gray-200">
+      <p class="text-center text-gray-600">
+        &copy; <%= new Date().getFullYear() %> Mabridge. All rights reserved.
+      </p>
+    </div>
+  </div>
+</footer>
   
   <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
   <script src="/scripts/slider.js"></script>
 </body>
 </html>
+
+
